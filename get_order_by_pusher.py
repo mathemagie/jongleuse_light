@@ -1,11 +1,10 @@
 #!/usr/bin/env python3.9
 
-import pysher
 import sys
 import time
-
-# Add a logging handler so we can see the raw communication data
 import logging
+import pysher
+
 root = logging.getLogger()
 root.setLevel(logging.INFO)
 ch = logging.StreamHandler(sys.stdout)
@@ -14,12 +13,11 @@ root.addHandler(ch)
 pusher = pysher.Pusher('73bcb26ed6d04c63889a',cluster='eu')
 
 def write_status_sextoy(write_vitesse):
-	f = open("sextoy.txt", "w")
-	f.write(write_vitesse)
+    f = open("sextoy.txt", "w")
+    f.write(write_vitesse)
 	f.close()
 
-
-def  my_func(*args, **kwargs):
+def my_func(*args, **kwargs):
     print("processing Args:", args)
     write_status_sextoy(args[0])
     print("processing Kwargs:", kwargs)
