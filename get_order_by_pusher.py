@@ -15,7 +15,7 @@ pusher = pysher.Pusher('73bcb26ed6d04c63889a',cluster='eu')
 def write_status_sextoy(write_vitesse):
     f = open("sextoy.txt", "w")
     f.write(write_vitesse)
-	f.close()
+    f.close()
 
 def my_func(*args, **kwargs):
     print("processing Args:", args)
@@ -32,5 +32,4 @@ pusher.connection.bind('pusher:connection_established', connect_handler)
 pusher.connect()
 
 while True:
-    # Do other things in the meantime here...
     time.sleep(1)
