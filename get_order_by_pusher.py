@@ -1,9 +1,12 @@
 #!/usr/bin/env python3.9
+"""Write."""
 
+
+import logging
 import sys
 import time
-import logging
-import pysher
+
+import pysher  # type: ignore
 
 root = logging.getLogger()
 root.setLevel(logging.INFO)
@@ -16,12 +19,14 @@ print("test")
 
 
 def write_status_sextoy(write_vitesse):
-    f = open("sextoy.txt", "w")
-    f.write(write_vitesse)
-    f.close()
+    """Write."""
+    with open("sextoy.txt", "w", encoding="utf-8") as file:
+        file.write(write_vitesse)
+        file.close()
 
 
 def my_func(*args, **kwargs):
+    """Write."""
     print("processing Args:", args)
     write_status_sextoy(args[0])
     print("processing Kwargs:", kwargs)
@@ -29,7 +34,9 @@ def my_func(*args, **kwargs):
 
 # We can't subscribe until we've connected, so we use a callback handler
 # to subscribe when able
-def connect_handler(data):
+def connect_handler():
+    """Write."""
+
     channel = pusher.subscribe("my-channel")
     channel.bind("my-event", my_func)
 
