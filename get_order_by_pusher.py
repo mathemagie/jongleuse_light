@@ -17,6 +17,8 @@ pusher = pysher.Pusher("73bcb26ed6d04c63889a", cluster="eu")
 
 print("test")
 
+AC_RR = 2
+
 
 def write_status_sextoy(write_vitesse):
     """Write."""
