@@ -3,16 +3,15 @@
   <title>Pusher Test</title>
   <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
   <script>
-
     // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
 
-    var pusher = new Pusher('73bcb26ed6d04c63889a', {
-      cluster: 'eu'
+    var pusher = new Pusher("73bcb26ed6d04c63889a", {
+      cluster: "eu",
     });
 
-    var channel = pusher.subscribe('my-channel');
-    channel.bind('my-event', function(data) {
+    var channel = pusher.subscribe("my-channel");
+    channel.bind("my-event", function (data) {
       alert(JSON.stringify(data));
     });
   </script>
@@ -20,7 +19,7 @@
 <body>
   <h1>Pusher Test ddd</h1>
   <p>
-    Try receive a data from my jongleuse_light <code>my-channel</code>
-    with event name <code>my-event</code>.
+    Try receive a data from my jongleuse_light <code>my-channel</code> with event name
+    <code>my-event</code>.
   </p>
 </body>
